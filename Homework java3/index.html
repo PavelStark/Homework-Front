@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* ------------------------------------------------------------------------------------ */
+
+        /* 1.Напишите функцию, которая принимает два числовых аргумента и возвращает наименьшее из них. */
+
+        function getLowNumber(a, b) {
+            if (a < b) {
+                return a
+            }
+            else
+                return b
+        }
+        console.log(getLowNumber(3, -5));
+
+        /* ------------------------------------------------------------------------------------ */
+
+        /* 2.Напишите функцию, которая принимает два числовых аргумента и выводит в консоль все четные
+            числа от большего к меньшему. */
+
+        function getHighEvenNumber(a, b) {
+
+            if (a > b) {
+                for (let i = a; i >= b; i--) {
+                    if (i % 2 == 0) {
+                        console.log(i);
+                    }
+                }
+            }
+            else if (b > a) {
+                for (let i = b; i >= a; i--) {
+                    if (i % 2 == 0) {
+                        console.log(i);
+                    }
+                }
+            }
+            else if (a = b) {
+                if (a % 2 == 0) {
+                    console.log(a);
+                }
+                else console.log("the numbers are odd");
+            }
+
+        }
+        getHighEvenNumber(2, 10);
+
+        /* ------------------------------------------------------------------------------------ */
+
+        /* Напишите функцию power, которая принимает два числовых аргумента (основание степени и саму
+            степень) и возвращает число в указанной степени. Значение степени должно быть указано по умолчанию 2. */
+
+        function power(a, b) {
+            b = 2;
+            return a ** b
+        }
+        console.log(power(2, 5));
+
+        /* ------------------------------------------------------------------------------------ */
+
+        /* Напишите функцию, которая принимает числовой аргумент n и считает сумму чисел от 1 до n. */
+
+        function getN(n) {
+            let result = 0;
+            for (let i = 1; i <= n; i++) {
+                result += i
+            }
+            return result
+        }
+        console.log(getN(3));
+
+        /* ------------------------------------------------------------------------------------ */
+
+        /* Напишите функцию, которая принимает два числовых аргумента n и m и считает сумму четных
+            чисел и нечетных чисел от n до m. Суммы выведите в консоль (в начале сумму четных чисел,
+            а затем сумму нечетных). */
+
+        function getTwoNumber(n, m) {
+            let even = 0;
+            let odd = 0;
+
+            if (n < m) {
+                for (let i = n; i <= m; i++) {
+                    if (i % 2 == 0) {
+                        even += i;
+                    }
+                    if (i % 2 != 0) {
+                        odd += i;
+                    }
+                }
+                console.log(even);
+                console.log(odd);
+                return
+
+            }
+            if (n > m) {
+                for (let i = m; i <= n; i++) {
+                    if (i % 2 == 0) {
+                        even += i;
+                    }
+                    if (i % 2 != 0) {
+                        odd += i;
+                    }
+                }
+                console.log(even);
+                console.log(odd);
+                return
+            }
+        }
+
+        getTwoNumber(-5, 0);
+
+        /* ------------------------------------------------------------------------------------ */
+
+        /* Напишите функцию, которая принимает в качестве аргументов массив строк, а возвращает первый
+            самый длинный элемент массива. Если входной массив пуст, функция возвращает null. Если есть
+            несколько одинаковых по длине элементов - функция возвращает первый из этих элементов.
+            (string.length > string.length) - сравнение длины строк
+            Пример: [ 'one', 'two', 'three' ] => 'three' */
+
+        const arr = ["one", "two", "three"]
+
+        function Name(nameTheArray) {
+            if (nameTheArray < [0]) {
+                return "null"
+            } else {
+                return nameTheArray.reduce(function (lname,
+                    number) {
+                    if (lname.length > number.length) {
+                        return number
+                    } else if (lname.length == number.length) {
+                        return lname
+                    } else {
+                        return number
+                    }
+                },
+                    "");
+            }
+        }
+        console.log(Name(['one', 'two', 'three', 'viweee']));  
+    </script>
+</body>
+
+</html>
